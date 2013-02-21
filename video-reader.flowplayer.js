@@ -17,7 +17,11 @@ $(function() {
     $(".player").attr("data-cuepoints", JSON.stringify(data.cuepoints.pageturns))
 
     // Initialize the player
-    $(".player").flowplayer();
+    var player = $(".player").flowplayer({"generate_cuepoints": true});
+    
+
+    
+
 
   })
  
@@ -34,7 +38,16 @@ flowplayer(function(api, root) {
  
   // when a video is loaded and ready to play
   }).bind("ready", function() {
-    
+    // Add Page Numbers for the cuepoints
+    var currentPage = 0
+    var lastPage = -1
+    $(".video-reader-pager .fp-cuepoint").each(function() {
+      lastPage++
+    })
+
+    $(".fp-cuepoint" + lastPage).text("<")
+    $(".fp-cuepoint" + currentPage).text("Page " + (currentPage + 1))
+    $(".fp-cuepoint" + (currentPage + 1)).text(">")
   });
  
 });
