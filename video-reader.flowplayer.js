@@ -14,6 +14,8 @@ $(function() {
 
     $(".player video").html("<source type='video/webm' src='" + resource_url + "/" + data.filename + "'/>")
 
+    $(".player").attr("data-cuepoints", JSON.stringify(data.cuepoints.pageturns))
+
     // Initialize the player
     $(".player").flowplayer();
 
@@ -27,7 +29,8 @@ $(function() {
 flowplayer(function(api, root) {
  
   // when a new video is about to be loaded
-  api.bind("load", function() {
+  api.bind("cuepoint", function() {
+
  
   // when a video is loaded and ready to play
   }).bind("ready", function() {
