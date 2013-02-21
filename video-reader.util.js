@@ -1,10 +1,3 @@
-// http://flowplayer.org/docs/api.html
-
-/*
- * @todo If cordova is available, use Media object to capture mic 
- * http://docs.phonegap.com/en/2.4.0/cordova_media_media.md.html#Media
- * http://flowplayer.org/docs/api.html
- */
 
 
   var findOptimalResolutionForScreen = function(aspectRatio) {
