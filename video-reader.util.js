@@ -7,10 +7,10 @@
     // If the width fits with max height, use that max height, otherwise 
     // it fits better with max width.
     if (widthAtMaxHeight < window.innerWidth) {
-      return {"height": window.innerHeight, "width": widthAtMaxHeight}
+      return {"height": window.innerHeight - 100, "width": widthAtMaxHeight}
     }
     else {
-      return {"height": heightAtMaxWidth, "width": window.width}
+      return {"height": heightAtMaxWidth - 100, "width": window.width}
     }
 
   }
