@@ -12,17 +12,15 @@ $(function() {
       $('.player').height(dimensions.height)
     // }, 1000)
 
+    // Set the video
     $(".player video").html("<source type='video/webm' src='" + resource_url + "/" + data.filename + "'/>")
 
+    // Set page turn cuepoints for flowplayer
     $(".player").attr("data-cuepoints", JSON.stringify(data.cuepoints.pageturns))
 
     // Initialize the player
     var player = $(".player").flowplayer({"generate_cuepoints": true});
     
-
-    
-
-
   })
  
 });
