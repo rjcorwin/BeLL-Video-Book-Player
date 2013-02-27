@@ -3,7 +3,7 @@ body {
 }
 
 .fp-ui { 
- display: none;
+ /* display: none; */
 }
 
 .player .fp-cuepoint { 
