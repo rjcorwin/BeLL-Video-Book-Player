@@ -1,7 +1,7 @@
-
 # What this is and why it's useful
 Video books cost little to produce (the example book was produced using Quicktime which comes for free with Mac OS X) and requires very little skill of the person generating the video book (only knowledge of how to start a screencast navigating PDFs required). This app builds on this concept by looking for an optional .cuepoints.json file that describes when the pages turn in the video book.  This allows the app to show what page of a video book the viewer is on and also to navigate between pages.  When file size of a video book is of concern, video books are best suited for early grade reading levels where picture books have large text.  This translates to only a small increase in file size between the PDF of the book and actual video file of the book. For example, the example book's PDF is 3.9mb while the video file is 5.4mb. 
 
+![Screenshot](https://raw.github.com/rjsteinert/BeLL-Video-Book-Player/master/docs/screenshot.png)
 
 # Getting started
 
@@ -20,6 +20,6 @@ From the url parameter provided, this code appends ".cuepoints.json" to it to fi
 
 BeLL Video Book Player by R.J. Steinert, Open Learning Exchange (http://ole.org)
 
-Flowplayer
+FlowPlayer by FlowPlayer LTD (https://github.com/flowplayer/flowplayer) 
 
 Kevin's Birthday book by Rubbish Books
