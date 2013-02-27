@@ -32,3 +32,11 @@ body {
   float:right;
   background: green;
 }
+
+.page-number {
+  margin-top: 15px;
+}
+
+.page-number h2 {
+  margin: 5px 0 0 0;
+}

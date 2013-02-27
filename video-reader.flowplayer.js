@@ -2,7 +2,10 @@
 
 $(function() {
  var resource_url = $.url().param("url")
-  $.getJSON(resource_url + "/meta.json", function(data) {
+
+ // Get the cuepoints JSON file for this video file @todo If the metadata doesn't exist, set up
+ // some sensible defaults to fall back on.
+ $.getJSON(resource_url + ".cuepoints.json", function(data) {
 
     // Set the size of the player for the user's screen
     // setInterval(function() { using an interval doesn't work as well as you would expect...
@@ -13,10 +16,10 @@ $(function() {
     // }, 1000)
 
     // Set the video
-    $(".player video").html("<source type='video/webm' src='" + resource_url + "/" + data.filename + "'/>")
+    $(".player video").html("<source type='video/webm' src='" + resource_url + "'/>")
 
     // Set page turn cuepoints for flowplayer
-    $(".player").attr("data-cuepoints", JSON.stringify(data.cuepoints.pageturns))
+    $(".player").attr("data-cuepoints", JSON.stringify(data))
 
     // Initialize the player
     var player = $(".player").flowplayer({"generate_cuepoints": true});
@@ -74,7 +77,7 @@ flowplayer(function(api, root) {
 
     // Set the links
     $(".fp-cuepoint" + previousPage).text("<").addClass("previous-page")
-    $(".fp-cuepoint" + destinationPage).text("Page " + (destinationPage + 1)).addClass("current-page")
+    $(".fp-cuepoint" + destinationPage).html("<div class='page-number'>Page <h2>" + (destinationPage + 1 + "</h2></div>")).addClass("current-page")
     $(".fp-cuepoint" + nextPage).text(">").addClass("next-page")
 
   // when a video is loaded and ready to play
@@ -92,7 +95,7 @@ flowplayer(function(api, root) {
     })
 
     $(".fp-cuepoint" + lastPage).text("<").addClass("previous-page")
-    $(".fp-cuepoint" + currentPage).text("Page " + (currentPage + 1)).addClass("current-page")
+    $(".fp-cuepoint" + currentPage).html("<div class='page-number'>Page <h2>" + (currentPage + 1 + "</h2></div>")).addClass("current-page")
     $(".fp-cuepoint" + (currentPage + 1)).text(">").addClass("next-page")
 
   });
